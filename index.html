@@ -207,6 +207,7 @@
         <h4>Sedan LX 2025</h4>
         <p>Elegancia, confort y tecnología.</p>
         <div class="price">USD 24.900</div>
+        <button class="btn buy-btn" onclick="showToast('¡Has elegido el Sedan LX 2025!')">Comprar</button>
       </div>
     </div>
 
@@ -216,6 +217,7 @@
         <h4>SUV Urban X</h4>
         <p>Potencia y espacio para toda la familia.</p>
         <div class="price">USD 31.500</div>
+        <button class="btn buy-btn" onclick="showToast('¡Has elegido el SUV Urban X!')">Comprar</button>
       </div>
     </div>
 
@@ -225,6 +227,37 @@
         <h4>Sport GT</h4>
         <p>Rendimiento y diseño deportivo.</p>
         <div class="price">USD 39.900</div>
+        <button class="btn buy-btn" onclick="showToast('¡Has elegido el Sport GT!')">Comprar</button>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="/img/aaron-huber-8qYE6LGHW-c-unsplash.jpg" />
+      <div class="car-info">
+        <h4>Eco Compact</h4>
+        <p>Eficiencia y tamaño ideal para la ciudad.</p>
+        <div class="price">USD 18.700</div>
+        <button class="btn buy-btn" onclick="showToast('¡Has elegido el Eco Compact!')">Comprar</button>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="/img/hakon-sataoen-qyfco1nfMtg-unsplash.jpg" />
+      <div class="car-info">
+        <h4>Pickup Pro</h4>
+        <p>Fuerza y capacidad para el trabajo pesado.</p>
+        <div class="price">USD 34.200</div>
+        <button class="btn buy-btn" onclick="showToast('¡Has elegido la Pickup Pro!')">Comprar</button>
+      </div>
+    </div>
+
+    <div class="car-card">
+      <img src="/img/stefan-rodriguez-2AovfzYV3rc-unsplash.jpg" />
+      <div class="car-info">
+        <h4>Coupé Elegance</h4>
+        <p>Estilo y lujo en cada detalle.</p>
+        <div class="price">USD 44.800</div>
+        <button class="btn buy-btn" onclick="showToast('¡Has elegido la Coupé Elegance!')">Comprar</button>
       </div>
     </div>
   </div>
@@ -275,12 +308,23 @@
     });
   }
 
+  function showToast(msg) {
+    const toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+      toast.textContent = "Mensaje enviado correctamente 🚀";
+    }, 2000);
+  }
+
   const form = document.getElementById("contactForm");
   const toast = document.getElementById("toast");
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
+    toast.textContent = "Mensaje enviado correctamente 🚀";
     toast.classList.add("show");
 
     setTimeout(() => {
