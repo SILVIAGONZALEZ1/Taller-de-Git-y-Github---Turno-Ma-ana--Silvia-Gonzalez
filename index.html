@@ -92,14 +92,26 @@
     <form id="contactForm">
       <input type="text" placeholder="Nombre" required />
       <input type="email" placeholder="Email" required />
-      <textarea placeholder="¿Qué auto te interesa?" rows="4" required></textarea>
+      <div class="textarea-container">
+        <textarea id= "mensaje" placeholder="¿Qué auto te interesa?" rows="4" maxlength="200" required></textarea>
+        <div class="contador">
+          <span id="caracteresRestantes">200</span> caracteres restantes
+        </div>      
+      </div>
       <button class="btn" type="submit">Enviar consulta</button>
     </form>
   </section>
   <section id="video">
     <h3 class="section-title">Conocé más sobre AutoNova</h3>
     <div class="video-container">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <video 
+      src="vid/istockphoto-975821476-640_adpp_is.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      style="pointer-events: none;">
+      </video>
     </div>
   </section>
 </grid>
