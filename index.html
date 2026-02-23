@@ -129,10 +129,64 @@
       text-align: center;
     }
 
-    .feature-box {
-      padding: 2rem;
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 200px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       border-radius: 10px;
-      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .flip-card-front {
+      background-color: #f8fafc;
+      color: #222;
+      flex-direction: column;
+    }
+
+    .flip-card-back {
+      background-color: #e11d48;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.2em;
+      margin-top: 0.5rem;
+    }
+
+    .profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+      object-fit: cover;
     }
 
     form {
@@ -182,7 +236,7 @@
     <h1>🚗 AutoNova</h1>
     <div>
       <a href="#autos">Autos</a>
-      <a href="#beneficios">Beneficios</a>
+      <a href="#beneficios">Reseñas</a>
       <a href="#contacto">Contacto</a>
     </div>
   </nav>
@@ -231,22 +285,46 @@
 </section>
 
 <section id="beneficios">
-  <h3 class="section-title">¿Por qué elegirnos?</h3>
+  <h3 class="section-title">Donde la experiencia se convierte en confianza</h3>
 
   <div class="features">
-    <div class="feature-box">
-      <h4>Financiación flexible</h4>
-      <p>Planes adaptados a tu presupuesto.</p>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img class="profile-pic" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100&q=80" alt="Foto de Juan Pérez">
+          <h4>Juan Pérez</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="flip-card-back">
+          <p>"La verdad es que me sorprendió lo fácil que fue financiar el auto. Las tasas son geniales y el proceso fue super rápido. ¡Recomiendo 100%!"</p>
+        </div>
+      </div>
     </div>
 
-    <div class="feature-box">
-      <h4>Garantía oficial</h4>
-      <p>Respaldo total en tu compra.</p>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img class="profile-pic" src="https://www.okchicas.com/wp-content/uploads/2018/01/Poses-para-una-buena-foto-de-perfil-15-1.jpg" alt="Foto de María García">
+          <h4>María García</h4>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="flip-card-back">
+          <p>"Wow, en serio, entregaron el auto en 3 días. Pensé que tardaría más, pero no. El equipo es increíble, muy atentos."</p>
+        </div>
+      </div>
     </div>
 
-    <div class="feature-box">
-      <h4>Entrega rápida</h4>
-      <p>Salí manejando en pocos días.</p>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img class="profile-pic" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&h=100&q=80" alt="Foto de Carlos López">
+          <h4>Carlos López</h4>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <div class="flip-card-back">
+          <p>"La garantía me da tranquilidad total. Al principio tuve que esperar un poco, pero la atención al cliente fue top. Vale la pena."</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -274,7 +352,7 @@
       behavior: "smooth"
     });
   }
-
+script
   const form = document.getElementById("contactForm");
   const toast = document.getElementById("toast");
 
