@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AutoNova — Tu próximo auto te espera</title>
+  <!-- importar fuente Bagola desde Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bagola:ital@1&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -46,12 +48,16 @@
 
     .hero {
       height: 90vh;
-      background: pink; /* fondo rosa solicitado */
+      background: black; /* fondo negro */
+      background-size: cover;       /* cubrir ancho de pantalla */
+      background-position: left top;  /* no centrar, posición superior izquierda */
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       color: white;
+      font-style: italic; /* texto en cursiva */
+      font-family: 'Bagola', cursive; /* usar Bagola Italic */
       padding: 2rem;
       position: relative;
       overflow: hidden;
@@ -112,7 +118,7 @@
     }
 
     .btn {
-      background: #e11d48;
+      background: red; /* botón de consulta en rojo */
       color: white;
       padding: 0.8rem 1.5rem;
       border: none;
@@ -123,7 +129,7 @@
     }
 
     .btn:hover {
-      background: #be123c;
+      background: #cc0000;
     }
 
     section {
