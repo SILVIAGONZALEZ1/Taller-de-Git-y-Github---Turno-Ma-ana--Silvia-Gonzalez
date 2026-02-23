@@ -127,6 +127,12 @@ section {
     background: #f8fafc;
 }
 
+.feature-box:hover {
+    transition: 0.5s;
+    transform: translateY(-3px);
+    background: #ffffff07;
+}
+
 form {
     display: grid;
     gap: 1rem;
