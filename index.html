@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="script" href="script.js">
   <title>AutoNova — Tu próximo auto te espera</title>
   <link rel="icon" id="favicon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
   <link rel="stylesheet" href="styles.css" />
+
 </head>
 
 <body>
@@ -111,16 +114,36 @@
   </div>
 </section>
 
-<section id="contacto">
-  <h3 class="section-title">Contactanos</h3>
-
-  <form id="contactForm">
-    <input type="text" placeholder="Nombre" required />
-    <input type="email" placeholder="Email" required />
-    <textarea placeholder="¿Qué auto te interesa?" rows="4" required></textarea>
-    <button class="btn" type="submit">Enviar consulta</button>
-  </form>
-</section>
+<grid class="pre-footer">
+  <section id="contacto">
+    <h3 class="section-title">Contactanos</h3>
+  
+    <form id="contactForm">
+      <input type="text" placeholder="Nombre" required />
+      <input type="email" placeholder="Email" required />
+      <div class="textarea-container">
+        <textarea id= "mensaje" placeholder="¿Qué auto te interesa?" rows="4" maxlength="200" required></textarea>
+        <div class="contador">
+          <span id="caracteresRestantes">200</span> caracteres restantes
+        </div>      
+      </div>
+      <button class="btn" type="submit">Enviar consulta</button>
+    </form>
+  </section>
+  <section id="video">
+    <h3 class="section-title">Conocé más sobre AutoNova</h3>
+    <div class="video-container">
+      <video 
+      src="vid/istockphoto-975821476-640_adpp_is.mp4"
+      autoplay
+      muted
+      loop
+      playsinline
+      style="pointer-events: none;">
+      </video>
+    </div>
+  </section>
+</grid>
 
 <footer>
   © 2026 AutoNova — Todos los derechos reservados
@@ -131,6 +154,8 @@
 <script src="script.js"></script>
 
 <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+<script>
+</script>
 
 </body>
 </html>
