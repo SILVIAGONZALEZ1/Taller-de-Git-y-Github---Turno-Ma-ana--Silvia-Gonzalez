@@ -1,21 +1,22 @@
+
 function scrollToContact() {
-document.getElementById("contacto").scrollIntoView({
-    behavior: "smooth"
+    document.getElementById("contacto").scrollIntoView({
+        behavior: "smooth"
 });
 }
 
 function toggleMenu() {
-const navLinks = document.querySelector('.nav-links');
-const overlay = document.getElementById('overlay');
-navLinks.classList.toggle('active');
-overlay.classList.toggle('active');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay = document.getElementById('overlay');
+    navLinks.classList.toggle('active');
+    overlay.classList.toggle('active');
 }
 
 function closeMenu() {
-const navLinks = document.querySelector('.nav-links');
-const overlay = document.getElementById('overlay');
-navLinks.classList.remove('active');
-overlay.classList.remove('active');
+    const navLinks = document.querySelector('.nav-links');
+    const overlay = document.getElementById('overlay');
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
 }
 
 // Cerrar menú al hacer clic fuera
