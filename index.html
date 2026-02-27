@@ -41,7 +41,7 @@
 
   <div class="cars">
     <div class="car-card">
-      <img src="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" />
+      <img src="/img/joshua-koblin-eqW1MPinEV4-unsplash.jpg" alt="1"/>
       <div class="car-info">
         <h4>Sedan LX 2025</h4>
         <p>Elegancia, confort y tecnología.</p>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="car-card">
-      <img src="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" />
+      <img src="/img/olav-tvedt-6lSBynPRaAQ-unsplash.jpg" alt="2"/>
       <div class="car-info">
         <h4>SUV Urban X</h4>
         <p>Potencia y espacio para toda la familia.</p>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="car-card">
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" />
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="3"/>
       <div class="car-info">
         <h4>Sport GT</h4>
         <p>Rendimiento y diseño deportivo.</p>
@@ -121,26 +121,14 @@
     <form id="contactForm">
       <input type="text" placeholder="Nombre" required />
       <input type="email" placeholder="Email" required />
-      <div class="textarea-container">
-        <textarea id= "mensaje" placeholder="¿Qué auto te interesa?" rows="4" maxlength="200" required></textarea>
-        <div class="contador">
-          <span id="caracteresRestantes">200</span> caracteres restantes
-        </div>      
-      </div>
+      <textarea placeholder="¿Qué auto te interesa?" rows="4" required></textarea>
       <button class="btn" type="submit">Enviar consulta</button>
     </form>
   </section>
   <section id="video">
     <h3 class="section-title">Conocé más sobre AutoNova</h3>
     <div class="video-container">
-      <video 
-      src="vid/istockphoto-975821476-640_adpp_is.mp4"
-      autoplay
-      muted
-      loop
-      playsinline
-      style="pointer-events: none;">
-      </video>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </section>
 </grid>
@@ -155,6 +143,25 @@
 
 <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
 <script>
+  function scrollToContact() {
+    document.getElementById("contacto").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+  const form = document.getElementById("contactForm");
+  const toast = document.getElementById("toast");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+      form.reset();
+    }, 2500);
+  });
 </script>
 
 </body>
